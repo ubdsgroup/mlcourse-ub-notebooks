@@ -114,7 +114,7 @@ means,covmat = ldaLearn(X,y)
 ldaacc = ldaTest(means,covmat,Xtest,ytest)
 print('LDA Accuracy = '+str(ldaacc))
 # QDA
-means,covmats = ldaLearn(X,y)
+means,covmats = qdaLearn(X,y)
 qdaacc = ldaTest(means,covmats,Xtest,ytest)
 print('QDA Accuracy = '+str(qdaacc))
 
