@@ -32,7 +32,7 @@ def qdaLearn(X,y):
     
     return means,covmats
 
-def ldaTest(means,covmat,Xtest,ytest)
+def ldaTest(means,covmat,Xtest,ytest):
     # Inputs
     # means, covmat - parameters of the LDA model
     # Xtest - a N x d matrix with each row corresponding to a test example
@@ -43,7 +43,7 @@ def ldaTest(means,covmat,Xtest,ytest)
     # IMPLEMENT THIS METHOD
     return acc
 
-def qdaTest(means,covmats,Xtest,ytest)
+def qdaTest(means,covmats,Xtest,ytest):
     # Inputs
     # means, covmats - parameters of the QDA model
     # Xtest - a N x d matrix with each row corresponding to a test example
@@ -115,7 +115,7 @@ ldaacc = ldaTest(means,covmat,Xtest,ytest)
 print('LDA Accuracy = '+str(ldaacc))
 # QDA
 means,covmats = qdaLearn(X,y)
-qdaacc = ldaTest(means,covmats,Xtest,ytest)
+qdaacc = qdaTest(means,covmats,Xtest,ytest)
 print('QDA Accuracy = '+str(qdaacc))
 
 # Problem 2
