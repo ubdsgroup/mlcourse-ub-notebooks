@@ -155,7 +155,7 @@ w_init = np.zeros((X_i.shape[1],1))
 for lambd in lambdas:
     args = (X_i, y, lambd)
     w_l = minimize(regressionObjVal, w_init, jac=True, args=args,method='CG', options=opts)
-    rmses4[i] = testOLERegression(w_l,Xtest_i,ytest)
+    rmses4[i] = testOLERegression(w_l.x,Xtest_i,ytest)
     i = i + 1
 plt.plot(lambdas,rmses4)
 
