@@ -136,7 +136,7 @@ print('RMSE with intercept '+str(mle_i))
 
 # Problem 3
 k = 21
-lambdas = np.linspace(0, 1.0, num=k)
+lambdas = np.linspace(0, 0.004, num=k)
 i = 0
 rmses3 = np.zeros((k,1))
 for lambd in lambdas:
