@@ -146,8 +146,8 @@ for lambd in lambdas:
 plt.plot(lambdas,rmses3)
 
 # Problem 4
-lambdas = np.linspace(0, 1.0, num=k)
 k = 21
+lambdas = np.linspace(0, 0.004, num=k)
 i = 0
 rmses4 = np.zeros((k,1))
 opts = {'maxiter' : 50}    # Preferred value.                                                
