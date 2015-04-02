@@ -150,19 +150,22 @@ k = 21
 lambdas = np.linspace(0, 0.004, num=k)
 i = 0
 rmses4 = np.zeros((k,1))
-opts = {'maxiter' : 50}    # Preferred value.                                                
+opts = {'maxiter' : 100}    # Preferred value.                                                
 w_init = np.zeros((X_i.shape[1],1))
 for lambd in lambdas:
     args = (X_i, y, lambd)
     w_l = minimize(regressionObjVal, w_init, jac=True, args=args,method='CG', options=opts)
-    rmses4[i] = testOLERegression(w_l.x,Xtest_i,ytest)
+    w_l_1 = np.zeros((X_i.shape[1],1))
+    for j in range(len(w_l.x)):
+        w_l_1[j] = w_l.x[j]
+    rmses4[i] = testOLERegression(w_l_1,Xtest_i,ytest)
     i = i + 1
 plt.plot(lambdas,rmses4)
 
 
 # Problem 5
 pmax = 7
-lambda_opt = lambdas[np.argmax(rmses4)]
+lambda_opt = lambdas[np.argmin(rmses4)]
 rmses5 = np.zeros((pmax,2))
 for p in range(pmax):
     Xd = mapNonLinear(X[:,2],p)
@@ -172,4 +175,4 @@ for p in range(pmax):
     w_d2 = learnRidgeRegression(Xd,y,lamda_opt)
     rmses5[p,1] = testOLERegression(w_d2,Xdtest,ytest)
 plt.plot(range(pmax),rmses5)
-plt.legend('No Regularization','Regularization')
+plt.legend(('No Regularization','Regularization'))
