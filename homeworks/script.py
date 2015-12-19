@@ -8,7 +8,6 @@ def preprocess():
      Input:
      Although this function doesn't have any input, you are required to load
      the MNIST data set from file 'mnist_all.mat'.
-
      Output:
      train_data: matrix of training set. Each row of train_data contains 
        feature vector of a image
@@ -22,7 +21,6 @@ def preprocess():
        feature vector of a image
      test_label: vector of label corresponding to each image in the testing
        set
-
      Some suggestions for preprocessing step:
      - divide the original data set to training, validation and testing set
            with corresponding labels
@@ -98,13 +96,11 @@ def blrObjFunction(params, *args):
     """
     blrObjFunction computes 2-class Logistic Regression error function and
     its gradient.
-
     Input:
         initialWeights: the weight vector of size (D + 1) x 1 
         train_data: the data matrix of size N x D
         labeli: the label vector of size N x 1 where each entry can be either 0 or 1
                 representing the label of corresponding feature vector
-
     Output: 
         error: the scalar value of error function of 2-class logistic regression
         error_grad: the vector of size (D+1) x 1 representing the gradient of
@@ -134,7 +130,6 @@ def blrPredict(W, data):
      Output: 
          label: vector of size N x 1 representing the predicted label of 
          corresponding feature vector given in data matrix
-
     """
     label = np.zeros((data.shape[0],1));
     
@@ -193,4 +188,3 @@ print('\n\n--------------SVM-------------------\n\n')
 ##################
 # YOUR CODE HERE #
 ##################
-
